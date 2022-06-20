@@ -4,7 +4,7 @@ services:
     image: flyway/flyway:6.3.1
     command: -configFiles=/flyway/conf/flyway.config -locations=filesystem:/flyway/sql -connectRetries=60 migrate
     volumes:
-      - ${PWD}/sql_versions:/flyway/sql
+      - ${PWD}/sql_migrations:/flyway/sql
       - ${PWD}/docker-flyway.config:/flyway/conf/flyway.config
     environment:
     - POSTGRES_USER=${POSTGRES_USER}
